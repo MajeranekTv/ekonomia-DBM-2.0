@@ -6,43 +6,192 @@
   "_id": "iAgNX",
   "actions": [
     {
-      "type": "2",
-      "storage": "1",
-      "varName": "dzien",
-      "name": "Store Time Info"
-    },
-    {
-      "type": "1",
-      "storage": "1",
-      "varName": "miesiac",
-      "name": "Store Time Info"
-    },
-    {
-      "type": "0",
-      "storage": "1",
-      "varName": "rok",
-      "name": "Store Time Info"
-    },
-    {
-      "type": "3",
-      "storage": "1",
-      "varName": "godzina",
-      "name": "Store Time Info"
-    },
-    {
-      "type": "4",
-      "storage": "1",
-      "varName": "minuta",
-      "name": "Store Time Info"
-    },
-    {
       "channel": "0",
       "varName": "",
-      "message": "Data: ${tempVars(\"dzien\")}.${tempVars(\"miesiac\")}.${tempVars(\"rok\")}\n\nGodzina: ${tempVars(\"godzina\")}:${tempVars(\"minuta\")}",
+      "message": "",
+      "buttons": [
+        {
+          "name": "Kup pożywienie",
+          "type": "SUCCESS",
+          "id": "msg-button-b384033",
+          "url": "",
+          "emoji": "",
+          "mode": "MULTIPERSONAL",
+          "time": "120000",
+          "actions": [
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "hajs",
+              "comparison": "4",
+              "value": "59",
+              "branch": {
+                "iftrue": "99",
+                "iffalse": "99",
+                "iftrueActions": [
+                  {
+                    "member": "1",
+                    "varName": "",
+                    "dataName": "hajs",
+                    "changeType": "1",
+                    "value": "-60",
+                    "name": "Control Member Data"
+                  },
+                  {
+                    "member": "1",
+                    "varName": "",
+                    "dataName": "jedzenie",
+                    "changeType": "1",
+                    "value": "1",
+                    "name": "Control Member Data"
+                  },
+                  {
+                    "channel": "0",
+                    "varName": "",
+                    "message": "Zakupiono pożywnienie!",
+                    "buttons": [],
+                    "selectMenus": [],
+                    "attachments": [],
+                    "embeds": [],
+                    "reply": true,
+                    "ephemeral": true,
+                    "tts": false,
+                    "storage": "0",
+                    "varName2": "",
+                    "name": "Send Message"
+                  }
+                ],
+                "iffalseActions": [
+                  {
+                    "channel": "0",
+                    "varName": "",
+                    "message": "Nie masz odpowiedniej ilości pieniędzy.",
+                    "buttons": [],
+                    "selectMenus": [],
+                    "attachments": [],
+                    "embeds": [],
+                    "reply": true,
+                    "ephemeral": true,
+                    "tts": false,
+                    "storage": "0",
+                    "varName2": "",
+                    "name": "Send Message"
+                  }
+                ]
+              },
+              "name": "Check Member Data"
+            }
+          ]
+        },
+        {
+          "name": "Kup napój energetyczny",
+          "type": "DANGER",
+          "id": "msg-button-958830b",
+          "url": "",
+          "emoji": "",
+          "mode": "MULTIPERSONAL",
+          "time": "",
+          "actions": [
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "hajs",
+              "comparison": "4",
+              "value": "119",
+              "branch": {
+                "iftrue": "99",
+                "iffalse": "99",
+                "iftrueActions": [
+                  {
+                    "member": "1",
+                    "varName": "",
+                    "dataName": "hajs",
+                    "changeType": "1",
+                    "value": "-120",
+                    "name": "Control Member Data"
+                  },
+                  {
+                    "member": "1",
+                    "varName": "",
+                    "dataName": "napoje",
+                    "changeType": "1",
+                    "value": "1",
+                    "name": "Control Member Data"
+                  },
+                  {
+                    "channel": "0",
+                    "varName": "",
+                    "message": "Zakupiono napój energetyczny.",
+                    "buttons": [],
+                    "selectMenus": [],
+                    "attachments": [],
+                    "embeds": [],
+                    "reply": true,
+                    "ephemeral": true,
+                    "tts": false,
+                    "storage": "0",
+                    "varName2": "",
+                    "name": "Send Message"
+                  }
+                ],
+                "iffalseActions": [
+                  {
+                    "channel": "0",
+                    "varName": "",
+                    "message": "Nie masz odpowiedniej ilości pieniędzy.",
+                    "buttons": [],
+                    "selectMenus": [],
+                    "attachments": [],
+                    "embeds": [],
+                    "reply": true,
+                    "ephemeral": true,
+                    "tts": false,
+                    "storage": "0",
+                    "varName2": "",
+                    "name": "Send Message"
+                  }
+                ]
+              },
+              "name": "Check Member Data"
+            }
+          ]
+        }
+      ],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "",
+          "fields": [
+            {
+              "name": "Pożywienie",
+              "value": "Dzięki pożywieniu odnawiasz siły by móc pracować dalej.\n**Czas spożywania:** 60 sekund\n**Stamina:** 25\n**Koszt:** 60 PLN",
+              "inline": "false"
+            },
+            {
+              "name": "Napój energetyczny",
+              "value": "Dzięki napojom energetycznym odnawiasz siły by móc pracować dalej.\n**Czas spożywania:** 10 sekund\n**Stamina:** 75\n**Koszt:** 120 PLN",
+              "inline": "false"
+            }
+          ],
+          "author": "Witaj w sklepie",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
       "storage": "0",
       "varName2": "",
-      "iffalse": "0",
-      "iffalseVal": "",
       "name": "Send Message"
     }
   ],
