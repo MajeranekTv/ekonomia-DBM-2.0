@@ -1,2 +1,1 @@
-# ekonomia-DBM-2.0
-Prosta ekonomia do Discord Bot Maker'a Beta 2.0
+Aby funkcje prawidłowo działały należy dorzucić akcje z folderu `Dodatkowe akcje` do folderu `Actions` w projekcie bota.
