@@ -1,0 +1,51 @@
+{
+  "name": "sklep",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "iAgNX",
+  "actions": [
+    {
+      "type": "2",
+      "storage": "1",
+      "varName": "dzien",
+      "name": "Store Time Info"
+    },
+    {
+      "type": "1",
+      "storage": "1",
+      "varName": "miesiac",
+      "name": "Store Time Info"
+    },
+    {
+      "type": "0",
+      "storage": "1",
+      "varName": "rok",
+      "name": "Store Time Info"
+    },
+    {
+      "type": "3",
+      "storage": "1",
+      "varName": "godzina",
+      "name": "Store Time Info"
+    },
+    {
+      "type": "4",
+      "storage": "1",
+      "varName": "minuta",
+      "name": "Store Time Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Data: ${tempVars(\"dzien\")}.${tempVars(\"miesiac\")}.${tempVars(\"rok\")}\n\nGodzina: ${tempVars(\"godzina\")}:${tempVars(\"minuta\")}",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "4",
+  "description": "Pokazuje panel sklepowy"
+}

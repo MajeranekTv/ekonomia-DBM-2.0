@@ -1,0 +1,78 @@
+{
+  "name": "eq",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "tgJNS",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "hajs",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "hajsiwo",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "stamina",
+      "defaultVal": "50",
+      "storage": "1",
+      "varName2": "energie",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "jedzenie",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "jedzonko",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "napoje",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "napoje",
+      "name": "Store Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Twój ekwipunek:",
+          "url": "",
+          "color": "",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "Zawartość Twojego ekwipunku:\n\n**Pieniądze:** ${tempVars(\"hajsiwo\")} PLN\n\n**Stamina:** ${tempVars(\"energie\")}\n\n**Żywności:** ${tempVars(\"jedzonko\")} sztuk\n**Napoje energetyczne:** ${tempVars(\"napoje\")} sztuk",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "4",
+  "description": "Pokazuje twój ekwipunek, pieniądze oraz staminę"
+}

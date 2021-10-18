@@ -1,0 +1,93 @@
+{
+  name zjedz,
+  permissions NONE,
+  permissions2 NONE,
+  restriction 1,
+  _id Xvpnf,
+  actions [
+    {
+      member 1,
+      varName ,
+      dataName jedzenie,
+      comparison 4,
+      value 0,
+      branch {
+        iftrue 99,
+        iffalse 99,
+        iftrueActions [
+          {
+            channel 0,
+            varName ,
+            message Rozpoczęto spożywanie posiłku!,
+            buttons [],
+            selectMenus [],
+            attachments [],
+            embeds [],
+            reply true,
+            ephemeral true,
+            tts false,
+            storage 1,
+            varName2 wiadomosc_rozpoczeto,
+            name Send Message
+          },
+          {
+            member 1,
+            varName ,
+            dataName jedzenie,
+            changeType 1,
+            value -1,
+            name Control Member Data
+          },
+          {
+            time 60,
+            measurement 1,
+            name Wait
+          },
+          {
+            channel 0,
+            varName ,
+            message Zakończono spożywanie!,
+            buttons [],
+            selectMenus [],
+            attachments [],
+            embeds [],
+            reply true,
+            ephemeral true,
+            tts false,
+            storage 0,
+            varName2 wiadomosc_rozpoczeto,
+            name Send Message
+          },
+          {
+            member 1,
+            varName ,
+            dataName stamina,
+            changeType 1,
+            value 25,
+            name Control Member Data
+          }
+        ],
+        iffalseActions [
+          {
+            channel 0,
+            varName ,
+            message Nie masz jedzenia!,
+            buttons [],
+            selectMenus [],
+            attachments [],
+            embeds [],
+            reply true,
+            ephemeral true,
+            tts false,
+            storage 0,
+            varName2 ,
+            name Send Message
+          }
+        ]
+      },
+      name Check Member Data
+    }
+  ],
+  comType 4,
+  description Pijesz napój energetyczny
+}

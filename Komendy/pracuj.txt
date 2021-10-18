@@ -1,0 +1,166 @@
+{
+  "name": "pracuj",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "duYiw",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "stamina",
+      "comparison": "4",
+      "value": "49",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "2",
+        "iffalseVal": "9"
+      },
+      "name": "Check Member Data"
+    },
+    {
+      "storage": "1",
+      "varName": "zarobek",
+      "min": "100",
+      "max": "270",
+      "name": "Generate Random Number"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "bonus",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "aktualny_bonus",
+      "name": "Store Server Data"
+    },
+    {
+      "FirstNumber": "${tempVars(\"zarobek\")}",
+      "info": "19",
+      "SecondNumber": "${tempVars(\"aktualny_bonus\")}%",
+      "storage": "1",
+      "varName": "nowy_zarobek",
+      "name": "Math Operation Plus"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "hajs",
+      "changeType": "1",
+      "value": "tempVars(\"nowy_zarobek\")",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "stamina",
+      "changeType": "1",
+      "value": "-50",
+      "name": "Control Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [
+        {
+          "name": "Stan konta",
+          "type": "SUCCESS",
+          "id": "msg-button-18bee70",
+          "url": "",
+          "emoji": "",
+          "mode": "PERSONAL",
+          "time": "30000",
+          "actions": [
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "hajs",
+              "defaultVal": "0",
+              "storage": "1",
+              "varName2": "stan",
+              "name": "Store Member Data"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "Aktualny stan konta",
+                  "url": "",
+                  "color": "",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "Twój stan konta wynosi: ${tempVars(\"stan\")} PLN",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            }
+          ]
+        }
+      ],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Zakończono pracę",
+          "url": "",
+          "color": "",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "Zarobiłeś ${tempVars(\"nowy_zarobek\")} PLN (bez bonusu: ${tempVars(\"zarobek\")} PLN)",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "Aktualny bonus to: ${tempVars(\"aktualny_bonus\")}%",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Nie masz siły by pracować, zjedz coś.",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "4",
+  "description": "Zarabiaj mamonę",
+  "_timeRestriction": 3
+}

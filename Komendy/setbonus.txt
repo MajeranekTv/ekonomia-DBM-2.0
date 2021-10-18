@@ -1,0 +1,43 @@
+{
+  "name": "setbonus",
+  "permissions": "MANAGE_GUILD",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "BBeob",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "bonus",
+      "changeType": "0",
+      "value": "slashParams(\"bonus\")",
+      "name": "Control Server Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Zmieniono bonus na ${slashParams(\"bonus\")}%",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "4",
+  "description": "Ustawia aktualny bonus do zarobków!",
+  "parameters": [
+    {
+      "name": "bonus",
+      "description": "Podaj bonus od 1 ",
+      "type": "INTEGER",
+      "required": true,
+      "choices": null
+    }
+  ]
+}
